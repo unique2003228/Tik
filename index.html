@@ -39,7 +39,6 @@ input,select{font-family:inherit;color:inherit}
 .ic.sm{width:15px;height:15px}
 [data-reduce="1"] *,[data-reduce="1"] *::before,[data-reduce="1"] *::after{animation:none!important;transition:none!important}
 [data-reduce="1"] .aurora,[data-reduce="1"] .scanline{display:none}
-
 .bg{position:fixed;inset:0;z-index:-1;overflow:hidden;background:radial-gradient(900px 520px at 90% -8%,rgba(37,244,238,.08),transparent 60%),radial-gradient(800px 600px at 0% 108%,rgba(254,44,85,.09),transparent 60%),var(--bg)}
 .aurora{position:absolute;border-radius:50%;filter:blur(80px);opacity:.5;will-change:transform}
 .aurora.a{width:440px;height:440px;top:-160px;inset-inline-start:-110px;background:radial-gradient(circle,rgba(37,244,238,.3),rgba(61,139,255,.12) 55%,transparent 70%);animation:drift 26s ease-in-out infinite alternate}
@@ -49,7 +48,6 @@ input,select{font-family:inherit;color:inherit}
 .grain{position:absolute;inset:0;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
 .scanline{position:absolute;inset-inline:0;height:110px;top:-130px;background:linear-gradient(180deg,transparent,rgba(37,244,238,.05),transparent);animation:sweep 10s linear infinite}
 @keyframes sweep{to{transform:translateY(calc(100vh + 260px))}}
-
 header{position:fixed;top:0;inset-inline:0;height:var(--head);z-index:50;display:flex;align-items:center;gap:9px;padding-inline:12px;background:rgba(7,9,18,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
 .brand{display:flex;align-items:center;gap:9px;min-width:0}
 .logo{position:relative;width:30px;height:30px;flex:none}
@@ -70,14 +68,12 @@ header{position:fixed;top:0;inset-inline:0;height:var(--head);z-index:50;display
 .h-btn:active{transform:scale(.96)}
 .h-btn.off{color:var(--mut)}
 .h-btn.off .ic{color:var(--red)}
-
 main{max-width:920px;margin:0 auto;padding:calc(var(--head) + 16px) 12px 40px}
 .card{background:linear-gradient(180deg,rgba(26,33,64,.6),rgba(12,16,32,.94));border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:16px;position:relative;overflow:hidden}
 .card::before{content:'';position:absolute;top:0;inset-inline:0;height:1px;background:linear-gradient(90deg,transparent,rgba(37,244,238,.5),rgba(254,44,85,.5),transparent)}
 .reveal{opacity:0;transform:translateY(14px)}
 body.loaded .reveal,.stage .reveal{animation:rise .55s cubic-bezier(.2,.8,.25,1) forwards;animation-delay:var(--d,0s)}
 @keyframes rise{to{opacity:1;transform:none}}
-
 .hero{text-align:center;padding:6px 0 16px}
 .kicker{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;color:#7FF9F4;border:1px solid var(--line2);background:var(--s1);padding:5px 12px;border-radius:99px;margin-bottom:12px}
 .kicker .dot{width:6px;height:6px;border-radius:50%;background:var(--red);box-shadow:0 0 8px var(--red);animation:pulse 1.6s infinite}
@@ -120,6 +116,8 @@ select option{background:var(--s2)}
 input[type=range]{width:100%;appearance:none;-webkit-appearance:none;height:6px;border-radius:99px;background:linear-gradient(90deg,var(--cyan),var(--violet),var(--red));direction:ltr;cursor:pointer}
 input[type=range]::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:#fff;border:3px solid var(--cyan);box-shadow:0 0 10px var(--cyan)}
 input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;background:#fff;border:3px solid var(--cyan)}
+#customProxy{width:100%;background:var(--s2);border:1px solid var(--line2);border-radius:11px;font-family:var(--fm);font-size:12px;padding:10px 12px;direction:ltr;text-align:left;min-height:42px}
+#customProxy:focus{outline:none;border-color:var(--cyan)}
 .sw{display:flex;align-items:center;gap:8px;cursor:pointer;user-select:none;min-height:42px}
 .sw input{position:absolute;opacity:0;width:0;height:0}
 .sw-t{width:36px;height:20px;border-radius:99px;background:var(--s3);border:1px solid var(--line2);position:relative;transition:.25s;flex:none}
@@ -128,13 +126,12 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
 .sw input:checked+.sw-t::after{inset-inline-start:18px;background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
 .sw input:focus-visible+.sw-t{outline:2px solid var(--cyan);outline-offset:2px}
 .sw-l{font-size:12px;font-weight:500}
-.set-reset{grid-column:1/-1}
-
+.set-actions{grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap}
+.set-actions .btn{flex:1}
 .stage{display:flex;flex-direction:column;gap:14px;margin-top:14px;scroll-margin-top:calc(var(--head) + 10px)}
 .card-title{display:flex;align-items:center;gap:8px;font-family:var(--fd);font-weight:800;font-size:15px;margin-bottom:12px}
 .card-title .ic{color:var(--cyan)}
 .card-title .sub{font-family:var(--fb);font-weight:400;font-size:11px;color:var(--mut2);margin-inline-start:auto}
-
 .idle-card{text-align:center;padding:24px 16px}
 .radar-box{width:130px;height:130px;margin:0 auto 12px}
 .radar-box svg{width:100%;height:100%}
@@ -146,7 +143,6 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
 .promise{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:16px;text-align:start}
 .promise div{display:flex;align-items:center;gap:7px;background:var(--s3);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:11.5px;font-weight:500}
 .promise .ic{width:15px;height:15px;color:var(--cyan)}
-
 .scan-card{padding:18px 16px}
 .scan-head{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:12px}
 .scan-head h3{font-family:var(--fd);font-weight:800;font-size:16px;flex:1;min-width:150px}
@@ -155,21 +151,20 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
 .scan-meta span{background:var(--s3);border:1px solid var(--line);border-radius:99px;padding:3px 10px}
 .progress{height:7px;border-radius:99px;background:var(--s3);border:1px solid var(--line);overflow:hidden;margin-bottom:12px}
 .progress i{display:block;height:100%;width:5%;background:var(--grad);border-radius:99px;transition:width .4s;box-shadow:0 0 10px rgba(37,244,238,.5)}
-.term{direction:ltr;text-align:left;background:#080B16;border:1px solid var(--line);border-radius:12px;padding:11px 12px;font-family:var(--fm);font-size:10.5px;line-height:1.9;max-height:180px;overflow-y:auto}
+.term{direction:ltr;text-align:left;background:#080B16;border:1px solid var(--line);border-radius:12px;padding:11px 12px;font-family:var(--fm);font-size:10.5px;line-height:1.9;max-height:200px;overflow-y:auto}
 .tl{display:flex;gap:8px}
 .tt{color:var(--mut2);flex:none}
 .tm{unicode-bidi:plaintext;color:var(--mut)}
 .tl.ok .tm{color:var(--green)}.tl.warn .tm{color:var(--amber)}.tl.err .tm{color:var(--red)}
-
 .error-card{text-align:center;padding:24px 16px}
 .error-ic{width:66px;height:66px;border-radius:50%;background:rgba(254,44,85,.1);border:1px solid rgba(254,44,85,.45);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;color:var(--red);box-shadow:0 0 28px -8px rgba(254,44,85,.5)}
 .error-ic .ic{width:30px;height:30px}
 .error-card h3{font-family:var(--fd);font-weight:900;font-size:19px}
 .error-card p{color:var(--mut);font-size:12.5px;margin-top:5px}
-.err-list{direction:ltr;text-align:left;font-family:var(--fm);font-size:10.5px;color:var(--amber);background:rgba(255,176,32,.06);border:1px solid rgba(255,176,32,.3);border-radius:10px;padding:9px 11px;margin-top:12px;max-height:120px;overflow:auto}
+.err-tip{font-size:11.5px;color:#7FF9F4;background:rgba(37,244,238,.06);border:1px solid rgba(37,244,238,.3);border-radius:10px;padding:8px 11px;margin-top:10px}
+.err-list{direction:ltr;text-align:left;font-family:var(--fm);font-size:10.5px;color:var(--amber);background:rgba(255,176,32,.06);border:1px solid rgba(255,176,32,.3);border-radius:10px;padding:9px 11px;margin-top:12px;max-height:130px;overflow:auto}
 .err-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
 .err-actions .btn{flex:1 1 140px}
-
 .banner{display:flex;align-items:center;gap:9px;flex-wrap:wrap;background:rgba(255,176,32,.07);border:1px solid rgba(255,176,32,.4);border-radius:13px;padding:10px 13px;font-size:12.5px;color:var(--amber)}
 .banner span{flex:1;min-width:160px}
 .profile{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
@@ -184,15 +179,12 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
 .badge{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:700;padding:3px 10px;border-radius:99px;border:1px solid}
 .badge.ok{color:var(--green);border-color:rgba(46,230,168,.5);background:rgba(46,230,168,.08)}
 .badge.warn{color:var(--amber);border-color:rgba(255,176,32,.5);background:rgba(255,176,32,.08)}
-.badge.info{color:#7FF9F4;border-color:rgba(37,244,238,.45);background:rgba(37,244,238,.07)}
 .badge.part{color:var(--amber);border-color:rgba(255,176,32,.5);background:rgba(255,176,32,.08)}
-.badge.mut{color:var(--mut);border-color:var(--line2);background:var(--s3)}
 .p-meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;font-size:10.5px;color:var(--mut2)}
 .p-meta span{display:inline-flex;align-items:center;gap:5px;background:var(--s3);border:1px solid var(--line);border-radius:99px;padding:3px 9px}
 .p-meta .ic{width:12px;height:12px}
 .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;padding-top:13px;border-top:1px solid var(--line)}
 .actions .btn{flex:1 1 130px}
-
 .fgrid{display:grid;grid-template-columns:1fr;gap:9px}
 .f-row{display:flex;gap:11px;align-items:flex-start;background:var(--s3);border:1px solid var(--line);border-radius:13px;padding:11px 12px;transition:.2s}
 .f-row:active{transform:scale(.99)}
@@ -213,7 +205,6 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
 .f-copy.copied{color:var(--green);border-color:var(--green)}
 .f-copy:disabled{opacity:.3;cursor:default}
 .f-row.na{opacity:.75}
-
 .hist-tools{display:flex;gap:7px;margin-bottom:10px;flex-wrap:wrap}
 .hist-search{flex:1;min-width:140px;display:flex;align-items:center;gap:7px;background:var(--s3);border:1px solid var(--line2);border-radius:11px;padding:0 11px}
 .hist-search:focus-within{border-color:var(--cyan)}
@@ -235,7 +226,6 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
 .hist-empty{text-align:center;padding:22px 10px;color:var(--mut2);font-size:12.5px}
 .hist-empty .ic{width:32px;height:32px;margin-bottom:6px;color:var(--line2)}
 .hist-foot{font-size:10.5px;color:var(--mut2);margin-top:8px;text-align:center;font-family:var(--fm)}
-
 #toasts{position:fixed;bottom:calc(12px + env(safe-area-inset-bottom));inset-inline:12px;z-index:110;display:flex;flex-direction:column;gap:8px;max-width:400px;margin-inline:auto}
 .toast{display:flex;align-items:center;gap:9px;background:var(--overlay);backdrop-filter:blur(16px);border:1px solid var(--line2);border-radius:13px;padding:11px 13px;font-size:12.5px;box-shadow:0 14px 40px rgba(0,0,0,.6);opacity:0;transform:translateY(12px);transition:.3s}
 .toast.show{opacity:1;transform:none}
@@ -244,7 +234,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
 .toast.t-err{border-color:rgba(254,44,85,.5)}.toast.t-err .ic{color:var(--red)}
 .toast.t-warn{border-color:rgba(255,176,32,.5)}.toast.t-warn .ic{color:var(--amber)}
 .toast.t-info .ic{color:var(--blue)}
-.toast span{flex:1}
+.toast span{flex:1;white-space:pre-line}
 .t-act{color:#7FF9F4;font-weight:700;font-size:12px;padding:5px 11px;border:1px solid var(--cyan);border-radius:9px;flex:none}
 .t-x{color:var(--mut2);display:flex;padding:4px;flex:none}
 .t-x .ic{width:13px;height:13px}
@@ -258,31 +248,24 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
 .modal-actions{display:flex;gap:8px;justify-content:flex-end}
 footer{border-top:1px solid var(--line);padding:18px 14px calc(24px + env(safe-area-inset-bottom));text-align:center;color:var(--mut2);font-size:10.5px;max-width:760px;margin:18px auto 0}
 noscript{display:block;text-align:center;padding:90px 20px;color:var(--amber)}
-
 @media (min-width:600px){
   main{padding-inline:20px}
   .card{padding:20px}
   .search-row{flex-wrap:nowrap}
   .inp-wrap{flex:1 1 auto}
   .btn.primary{flex:0 0 auto;min-width:150px}
-  .settings{grid-template-columns:1.4fr 1fr auto auto auto;align-items:end}
-  .set-field{grid-column:auto}
-  .set-reset{grid-column:auto}
+  .settings{grid-template-columns:1.3fr 1fr;align-items:end}
+  .set-field.half{grid-column:auto}
   .promise{grid-template-columns:repeat(4,1fr)}
   .fgrid{grid-template-columns:1fr 1fr}
   .f-row.wide{grid-column:1/-1}
   .actions .btn{flex:1 1 auto}
   #toasts{inset-inline:auto 18px;margin:0}
 }
-@media (min-width:860px){
-  .hero h1{font-size:40px}
-  .promise{grid-template-columns:repeat(4,1fr)}
-}
 @media (prefers-reduced-motion:reduce){.aurora,.scanline{display:none}}
 </style>
 </head>
 <body>
-
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <symbol id="i-logo" viewBox="0 0 24 24"><path d="M9 18V5l10-2v11"/><circle cx="6.6" cy="18" r="2.6"/><circle cx="16.6" cy="14" r="2.6"/></symbol>
 <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></symbol>
@@ -322,6 +305,7 @@ noscript{display:block;text-align:center;padding:90px 20px;color:var(--amber)}
 <symbol id="i-json" viewBox="0 0 24 24"><path d="M8 4c-2 0-2.5 1-2.5 2.5v3C5.5 11 4.5 12 3 12c1.5 0 2.5 1 2.5 2.5v3C5.5 19 6 20 8 20M16 4c2 0 2.5 1 2.5 2.5v3c0 1.5 1 2.5 2.5 2.5-1.5 0-2.5 1-2.5 2.5v3c0 1.5-.5 2.5-2.5 2.5"/></symbol>
 <symbol id="i-txt" viewBox="0 0 24 24"><path d="M6 2.5h8L19 7.5V21a1 1 0 01-1 1H6a1 1 0 01-1-1V3.5a1 1 0 011-1z"/><path d="M14 2.5v5h5M9 12h6M9 16h6"/></symbol>
 <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2.5L4.5 13.5H11l-1 8L18.5 10H12z"/></symbol>
+<symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2.5 9a15 15 0 0119 0M5.5 12.5a10 10 0 0113 0M8.5 16a5 5 0 017 0"/><circle cx="12" cy="19.5" r="1" fill="currentColor" stroke="none"/></symbol>
 </defs></svg>
 
 <div class="bg" aria-hidden="true"><div class="aurora a"></div><div class="aurora b"></div><div class="gridlines"></div><div class="scanline"></div><div class="grain"></div></div>
@@ -340,7 +324,7 @@ noscript{display:block;text-align:center;padding:90px 20px;color:var(--amber)}
   <section class="hero">
     <div class="kicker reveal"><span class="dot"></span> 16 حقلًا · بيانات عامة فقط</div>
     <h1 class="reveal" style="--d:.06s">فحص حساب <span class="grad">تيك توك</span></h1>
-    <p class="reveal" style="--d:.12s">ألصق المعرف أو رابط الحساب — يجلب لك كل الحقول المطلوبة وينسخها بضغطة.</p>
+    <p class="reveal" style="--d:.12s">ألصق المعرف أو رابط الحساب — يجلب كل الحقول المطلوبة وينسخها بضغطة.</p>
     <div class="card search-card reveal" style="--d:.18s">
       <form id="searchForm" autocomplete="off">
         <div class="search-row">
@@ -357,23 +341,31 @@ noscript{display:block;text-align:center;padding:90px 20px;color:var(--amber)}
         <div class="input-msg" id="inputMsg" role="alert"></div>
       </form>
       <div class="settings">
-        <div class="set-field">
+        <div class="set-field half">
           <label for="srcSel"><span>مصدر الجلب</span></label>
           <select id="srcSel">
-            <option value="auto">تلقائي — كل المصادر بالترتيب</option>
-            <option value="tikwm">TikWM API (الأسرع)</option>
+            <option value="auto">تلقائي — كل المسارات</option>
+            <option value="tikwm">TikWM API</option>
+            <option value="jina">Jina Reader (تجاوز الحجب)</option>
             <option value="ttapi">TikTok User API</option>
             <option value="page">صفحة تيك توك</option>
             <option value="urlebird">Urlebird (أرقام فقط)</option>
           </select>
         </div>
+        <div class="set-field half">
+          <label for="timeoutRange"><span>مهلة المحاولة</span><output id="timeoutVal">12 ث</output></label>
+          <input type="range" id="timeoutRange" min="5" max="30" step="1" value="12">
+        </div>
         <div class="set-field">
-          <label for="timeoutRange"><span>مهلة المحاولة</span><output id="timeoutVal">8 ث</output></label>
-          <input type="range" id="timeoutRange" min="4" max="20" step="1" value="8">
+          <label for="customProxy"><span>بوابة مخصصة (اختياري — تُجرَّب أولًا)</span></label>
+          <input id="customProxy" type="text" placeholder="https://your-proxy.workers.dev/?url=" autocapitalize="none" spellcheck="false">
         </div>
         <label class="sw"><input type="checkbox" id="saveSw" checked><span class="sw-t"></span><span class="sw-l">حفظ السجل</span></label>
         <label class="sw"><input type="checkbox" id="reduceSw"><span class="sw-t"></span><span class="sw-l">تقليل الحركة</span></label>
-        <button type="button" class="btn ghost small set-reset" id="resetPrefs"><svg class="ic sm"><use href="#i-undo"/></svg> ضبط</button>
+        <div class="set-actions">
+          <button type="button" class="btn ghost small" id="connTest"><svg class="ic sm"><use href="#i-wifi"/></svg> اختبار الاتصال</button>
+          <button type="button" class="btn ghost small" id="resetPrefs"><svg class="ic sm"><use href="#i-undo"/></svg> إعادة ضبط</button>
+        </div>
       </div>
     </div>
   </section>
@@ -393,7 +385,7 @@ noscript{display:block;text-align:center;padding:90px 20px;color:var(--amber)}
   </div>
 </main>
 
-<footer>يعرض البيانات العامة المعلنة فقط لأغراض البحث والتعليم — غير تابع لـ TikTok. يعمل كملف واحد؛ عند حجب المتصفح للطلب المباشر ينتقل تلقائيًا بين مصادر وبوابات متعددة حتى ينجح الجلب.</footer>
+<footer>يعرض البيانات العامة المعلنة فقط لأغراض البحث والتعليم — غير تابع لـ TikTok. يعمل كملف واحد؛ عند حجب المتصفح للطلب المباشر ينتقل تلقائيًا بين عدة مصادر وبوابات حتى ينجح الجلب.</footer>
 
 <div class="scrim" id="modalScrim"></div>
 <div class="modal" id="modal" role="dialog" aria-modal="true">
@@ -411,7 +403,8 @@ const $=id=>document.getElementById(id);
 const esc=s=>String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 const ic=(n,c='')=>`<svg class="ic ${c}" aria-hidden="true"><use href="#i-${n}"/></svg>`;
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
-const Err=(code,msg)=>{const e=new Error(msg||code);e.code=code;return e;};
+class AppError extends Error{constructor(code,msg){super(msg||code);this.code=code;this.app=true;}}
+const Err=(c,m)=>new AppError(c,m);
 const NF=new Intl.NumberFormat('en-US');
 const CA=new Intl.NumberFormat('ar',{notation:'compact',maximumFractionDigits:1});
 const fmt=n=>(n==null||!isFinite(n))?'—':NF.format(Math.round(n));
@@ -429,26 +422,28 @@ const avCache=new Map();
 function letterAvatar(name){const k=name||'?';if(avCache.has(k))return avCache.get(k);const hues=[['#25F4EE','#3D8BFF'],['#FE2C55','#8A5CF6'],['#8A5CF6','#FF4FD8'],['#2EE6A8','#25F4EE'],['#FFB020','#FE2C55']];let h=0;for(const ch of k)h=(h*31+ch.charCodeAt(0))>>>0;const[a,b]=hues[h%hues.length];const L=[...k][0]||'؟';const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient></defs><rect width="100" height="100" fill="#121730"/><rect width="100" height="100" fill="url(#g)" opacity=".85"/><text x="50" y="66" font-size="46" font-family="Cairo,sans-serif" font-weight="900" fill="#070912" text-anchor="middle">${L}</text></svg>`;const uri='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);avCache.set(k,uri);return uri;}
 async function copyText(t){try{await navigator.clipboard.writeText(t);return true;}catch(_){try{const ta=document.createElement('textarea');ta.value=t;ta.style.cssText='position:fixed;opacity:0';document.body.appendChild(ta);ta.select();const ok=document.execCommand('copy');ta.remove();return ok;}catch(_){return false;}}}
 function download(name,content,type,bom){const b=new Blob([(bom?'\uFEFF':'')+content],{type});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1500);}
+function looseJSON(text){try{return JSON.parse(text);}catch(_){}const s=text.indexOf('{'),e=text.lastIndexOf('}');if(s>-1&&e>s){try{return JSON.parse(text.slice(s,e+1));}catch(_){}}throw Err('PARSE','رد ليس JSON صالحًا');}
 
-const PROXIES=[
- {name:'AllOrigins',wrap:false,build:u=>'https://api.allorigins.win/raw?url='+encodeURIComponent(u)},
+const BASE_PROXIES=[
  {name:'CorsProxy.io',wrap:false,build:u=>'https://corsproxy.io/?url='+encodeURIComponent(u)},
- {name:'CodeTabs',wrap:false,build:u=>'https://api.codetabs.com/v1/proxy?quest='+encodeURIComponent(u)},
+ {name:'AllOrigins',wrap:false,build:u=>'https://api.allorigins.win/raw?url='+encodeURIComponent(u)},
  {name:'AllOrigins·JSON',wrap:true,build:u=>'https://api.allorigins.win/get?url='+encodeURIComponent(u)},
+ {name:'CodeTabs',wrap:false,build:u=>'https://api.codetabs.com/v1/proxy?quest='+encodeURIComponent(u)},
  {name:'CF Worker',wrap:false,build:u=>'https://test.cors.workers.dev/?'+u},
  {name:'CorsEU',wrap:false,build:u=>'https://cors.eu.org/'+u}
 ];
-const PK='tikscope2.prefs',HK='tikscope2.hist';
-const DEFAULTS={source:'auto',timeout:8,save:true,reduce:matchMedia('(prefers-reduced-motion: reduce)').matches,sound:true};
+const PK='tikscope3.prefs',HK='tikscope3.hist';
+const DEFAULTS={source:'auto',timeout:12,save:true,reduce:matchMedia('(prefers-reduced-motion: reduce)').matches,sound:true,customProxy:''};
 let prefs={...DEFAULTS};try{const s=localStorage.getItem(PK);if(s)prefs={...DEFAULTS,...JSON.parse(s)};}catch(_){}
 const savePrefs=()=>{try{localStorage.setItem(PK,JSON.stringify(prefs));}catch(_){}};
 const state={token:0,scanning:false,cancelled:false,abort:null,current:null,lastUser:'',history:[],query:'',rafs:[],timer:null,scanCount:0,modalRes:null};
 function persistHist(){try{localStorage.setItem(HK,JSON.stringify(state.history));}catch(_){}}
+function proxyList(){const arr=[...BASE_PROXIES];const c=(prefs.customProxy||'').trim();if(/^https?:\/\/.+/i.test(c))arr.unshift({name:'مخصصة',wrap:false,build:u=>c+encodeURIComponent(u)});return arr;}
 
 let actx=null,master=null;
 function ensureAudio(){if(actx||!prefs.sound)return;try{actx=new(window.AudioContext||window.webkitAudioContext)();master=actx.createGain();master.gain.value=.9;master.connect(actx.destination);}catch(_){}}
 function tone(f,d,type,g,delay=0,slide){if(!prefs.sound||!actx||actx.state!=='running')return;try{const t=actx.currentTime+delay;const o=actx.createOscillator(),gn=actx.createGain();o.type=type;o.frequency.setValueAtTime(f,t);if(slide)o.frequency.exponentialRampToValueAtTime(slide,t+d);gn.gain.setValueAtTime(0,t);gn.gain.linearRampToValueAtTime(g,t+.012);gn.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(gn);gn.connect(master);o.start(t);o.stop(t+d+.05);}catch(_){}}
-const sfx={click:()=>tone(720,.06,'triangle',.04),scan:()=>{tone(280,.4,'sawtooth',.03,0,880);},ok:()=>{tone(523,.12,'sine',.055);tone(659,.12,'sine',.055,.09);tone(784,.2,'sine',.06,.18);},err:()=>{tone(190,.22,'sawtooth',.045);tone(128,.28,'sawtooth',.04,.09);},pop:()=>tone(430,.08,'triangle',.04,0,170),undo:()=>tone(520,.11,'sine',.045,0,820)};
+const sfx={click:()=>tone(720,.06,'triangle',.04),scan:()=>tone(280,.4,'sawtooth',.03,0,880),ok:()=>{tone(523,.12,'sine',.055);tone(659,.12,'sine',.055,.09);tone(784,.2,'sine',.06,.18);},err:()=>{tone(190,.22,'sawtooth',.045);tone(128,.28,'sawtooth',.04,.09);},pop:()=>tone(430,.08,'triangle',.04,0,170),undo:()=>tone(520,.11,'sine',.045,0,820)};
 document.addEventListener('pointerdown',function once(){ensureAudio();if(actx&&actx.state==='suspended')actx.resume();document.removeEventListener('pointerdown',once);},{once:true});
 
 const toasts=$('toasts');
@@ -459,7 +454,7 @@ function toast(msg,type='info',action){
  if(action){const b=document.createElement('button');b.className='t-act';b.textContent=action.label;b.onclick=()=>{clearTimeout(tm);el.remove();action.fn();};el.appendChild(b);}
  const x=document.createElement('button');x.className='t-x';x.innerHTML=ic('x');x.onclick=()=>{clearTimeout(tm);el.remove();};el.appendChild(x);
  toasts.appendChild(el);requestAnimationFrame(()=>el.classList.add('show'));
- tm=setTimeout(()=>{el.classList.remove('show');setTimeout(()=>el.remove(),320);},action?6500:4000);
+ tm=setTimeout(()=>{el.classList.remove('show');setTimeout(()=>el.remove(),320);},action?6500:4200);
  while(toasts.children.length>3)toasts.firstChild.remove();
 }
 function confirmBox(title,msg,okLabel){return new Promise(res=>{
@@ -469,47 +464,56 @@ function confirmBox(title,msg,okLabel){return new Promise(res=>{
  state.modalRes=done;$('modalOk').onclick=()=>done(true);$('modalCancel').onclick=()=>done(false);$('modalScrim').onclick=()=>done(false);$('modalCancel').focus();
 });}
 
-function makeSignal(ms){const ctrl=new AbortController();let timedOut=false;const ext=state.abort;const t=setTimeout(()=>{timedOut=true;ctrl.abort();},ms);const on=()=>ctrl.abort();if(ext){if(ext.signal.aborted)ctrl.abort();else ext.signal.addEventListener('abort',on,{once:true});}return{signal:ctrl.signal,timedOut:()=>timedOut,cleanup(){clearTimeout(t);if(ext)ext.signal.removeEventListener('abort',on);}};}
+function makeSignal(ms){const ctrl=new AbortController();let timedOut=false;const ext=state.abort;const t=setTimeout(()=>{timedOut=true;ctrl.abort('timeout');},ms);const on=()=>ctrl.abort('external');if(ext){if(ext.signal.aborted)ctrl.abort('external');else ext.signal.addEventListener('abort',on,{once:true});}return{signal:ctrl.signal,timedOut:()=>timedOut,ext,cleanup(){clearTimeout(t);if(ext)ext.signal.removeEventListener('abort',on);}};}
+function classify(e,sig,secs){
+ if(state.cancelled||(sig.ext&&sig.ext.signal.aborted&&!sig.timedOut()))return Err('CANCELED');
+ if(e&&e.app)return e;
+ if(sig.timedOut()||(e&&e.name==='AbortError'))return Err('TIMEOUT',`انتهت المهلة (${secs}ث) — البوابة بطيئة أو محجوبة`);
+ if(e&&e.name==='TypeError')return Err('NETWORK','فشل اتصال أو حجب CORS');
+ return Err('NETWORK',(e&&e.message)?e.message:'فشل الاتصال');
+}
 function decodeDataUri(s){const i=s.indexOf(',');const meta=s.slice(0,i),data=s.slice(i+1);if(/;base64/i.test(meta)){const bin=atob(data);const b=new Uint8Array(bin.length);for(let k=0;k<bin.length;k++)b[k]=bin.charCodeAt(k);return new TextDecoder('utf-8').decode(b);}return decodeURIComponent(data);}
-async function fetchText(url,proxy){
- const sig=makeSignal(prefs.timeout*1000);
+async function fetchText(url,proxy,ms){
+ const sig=makeSignal(ms);const secs=Math.round(ms/1000);
  try{
-  const res=await fetch(proxy?proxy.build(url):url,{signal:sig.signal,headers:{'Accept':'application/json, text/html;q=0.9, */*;q=0.8'}});
-  if(!res.ok)throw Err('HTTP','HTTP '+res.status);
+  const res=await fetch(proxy?proxy.build(url):url,{signal:sig.signal,headers:{'Accept':'application/json, text/html;q=0.9, text/plain;q=0.9, */*;q=0.8'}});
+  if(!res.ok){const h=res.status;const hint=h===401||h===403?' (يتطلب إذن/محجوب)':h===429?' (تجاوز الحد — انتظر قليلًا)':h>=500?' (عطل في الخادم)':'';throw Err('HTTP','HTTP '+h+hint);}
   let text=await res.text();
   if(proxy&&proxy.wrap){try{const j=JSON.parse(text);text=j.contents??'';if(typeof text==='string'&&text.startsWith('data:'))text=decodeDataUri(text);}catch(_){throw Err('PARSE','رد بوابة غير صالح');}}
-  if(!text||text.length<40)throw Err('EMPTY','رد فارغ');
+  if(!text||text.length<30)throw Err('EMPTY','رد فارغ');
   return text;
- }catch(e){
-  if(state.cancelled)throw Err('CANCELED');
-  if(e.code)throw e;
-  if(sig.timedOut())throw Err('TIMEOUT','انتهت المهلة');
-  throw Err('NETWORK',e.message||'فشل الاتصال');
- }finally{sig.cleanup();}
+ }catch(e){throw classify(e,sig,secs);}finally{sig.cleanup();}
 }
+function jinaURL(target){return'https://r.jina.ai/'+target.replace(/\?/g,'%3F').replace(/&/g,'%26');}
+async function getBody(target,a){if(a.via==='jina')return fetchText(jinaURL(target),null,a.ms);return fetchText(target,a.proxy||null,a.ms);}
 function deepFind(o,pred,depth=0,seen=new Set()){if(!o||typeof o!=='object'||depth>7||seen.has(o))return null;seen.add(o);if(pred(o))return o;for(const k in o){const r=deepFind(o[k],pred,depth+1,seen);if(r)return r;}return null;}
 function pickUser(j){const paths=[j?.data?.user,j?.data?.userInfo?.user,j?.userInfo?.user,j?.user,j?.data];for(const u of paths)if(u&&(u.uniqueId||u.unique_id||u.username||u.id))return u;return deepFind(j,o=>(o.uniqueId||o.unique_id||o.username)&&(o.nickname!=null||o.signature!=null||o.id!=null));}
 function pickStats(j,u){const paths=[j?.data?.stats,j?.data?.userInfo?.stats,j?.userInfo?.stats,j?.stats,u?.stats];let s=null;for(const x of paths)if(x&&(x.followerCount!=null||x.followers!=null||x.fans!=null)){s=x;break;}if(!s)s=deepFind(j,o=>o.followerCount!=null||o.follower_count!=null||o.followers!=null||o.fans!=null);const v2=j?.data?.statsV2||j?.userInfo?.statsV2||j?.statsV2;const flat=(u&&(u.followerCount!=null||u.followers!=null))?u:null;return{...(v2||{}),...(s||{}),...(flat||{})};}
+function grabCounts(text){const t=String(text).replace(/\s+/g,' ');const g=labels=>{for(const l of labels){let m=t.match(new RegExp('([\\d.,]+\\s*[KMB]?)\\s*'+l,'i'));if(!m)m=t.match(new RegExp(l+'\\s*[:·]?\\s*([\\d.,]+\\s*[KMB]?)','i'));if(m)return toNum(m[1]);}return null;};return{followers:g(['Followers','Follower','متابع']),following:g(['Following','يتابع']),hearts:g(['Likes','Hearts','إعجاب']),videos:g(['Videos','Uploads','فيديو'])};}
 
-async function srcTikwm(host,username,proxy){
- const call=async uid=>{const text=await fetchText(`https://${host}/api/user/info?unique_id=${encodeURIComponent(uid)}`,proxy);let j;try{j=JSON.parse(text);}catch(_){throw Err('PARSE','رد ليس JSON');}return j;};
- let j=await call('@'+username);
- if(j.code!==0&&/limit|frequency|too many|second/i.test(String(j.msg||''))){await sleep(1300);j=await call('@'+username);}
+async function srcTikwm(a,username){
+ const host=a.host||'www.tikwm.com';
+ const target='https://'+host+'/api/user/info?unique_id='+encodeURIComponent('@'+username);
+ const j=looseJSON(await getBody(target,a));
  if(j.code!==0){
   const msg=String(j.msg||'');
+  if(/limit|frequency|too many|second/i.test(msg)){await sleep(1300);const j2=looseJSON(await getBody(target,a));if(j2.code===0)return finishTikwm(j2,a);throw Err('RATE',String(j2.msg||'تجاوز الحد'));}
   if(/not\s*found|not\s*exist|no\s*user|invalid/i.test(msg)){
-   const j2=await call(username);
-   if(j2.code===0)j=j2;else if(/not\s*found|not\s*exist|no\s*user/i.test(String(j2.msg||'')))throw Err('NOTFOUND',msg);else throw Err('API',String(j2.msg||'code '+j2.code));
-  }else throw Err('API',msg||('code '+j.code));
+   const t2='https://'+host+'/api/user/info?unique_id='+encodeURIComponent(username);
+   const j3=looseJSON(await getBody(t2,a));
+   if(j3.code===0)return finishTikwm(j3,a);
+   if(/not\s*found|not\s*exist|no\s*user/i.test(String(j3.msg||'')))throw Err('NOTFOUND',msg);
+   throw Err('API',String(j3.msg||'code '+j3.code));
+  }
+  throw Err('API',msg||('code '+j.code));
  }
- const u=pickUser(j),s=pickStats(j,u);
- if(!u)throw Err('PARSE','بنية غير متوقعة');
- return{u,s,kind:'tt',name:'TikWM'+(proxy?' عبر '+proxy.name:' (مباشر)')};
+ return finishTikwm(j,a);
 }
-async function srcTtapi(username,proxy){
- const text=await fetchText('https://www.tiktok.com/api/user/detail/?uniqueId='+encodeURIComponent(username)+'&language=en',proxy);
- let j;try{j=JSON.parse(text);}catch(_){throw Err('PARSE','ليس JSON');}
- if(j?.userInfo?.user?.uniqueId)return{u:j.userInfo.user,s:j.userInfo.stats,kind:'tt',name:'TikTok API عبر '+proxy.name};
+function finishTikwm(j,a){const u=pickUser(j),s=pickStats(j,u);if(!u)throw Err('PARSE','بنية غير متوقعة');return{u,s,kind:'tt',name:'TikWM'+(a.via==='jina?' عبر Jina':a.proxy?' عبر '+a.proxy.name:' (مباشر)')};}
+async function srcTtapi(a,username){
+ const target='https://www.tiktok.com/api/user/detail/?uniqueId='+encodeURIComponent(username)+'&language=en';
+ const j=looseJSON(await getBody(target,a));
+ if(j?.userInfo?.user?.uniqueId)return{u:j.userInfo.user,s:j.userInfo.stats,kind:'tt',name:'TikTok API'+(a.via==='jina?' عبر Jina':' عبر '+a.proxy.name)};
  if(j?.statusCode===10202||/not exist|not found/i.test(String(j?.statusMsg||'')))throw Err('NOTFOUND',j.statusMsg||'');
  throw Err('API',String(j?.statusMsg||('statusCode '+j?.statusCode)));
 }
@@ -520,28 +524,52 @@ function extractPage(html){
  if(sigi){try{const j=JSON.parse(sigi[1]);const um=j.UserModule;if(um?.users){const k=Object.keys(um.users)[0];if(k)return{u:um.users[k],s:um.stats?.[k]||{},kind:'tt'};}}catch(_){}}
  const og=p=>{let m=html.match(new RegExp('<meta[^>]+(?:property|name)="'+p+'"[^>]+content="([^"]*)"'));if(!m)m=html.match(new RegExp('<meta[^>]+content="([^"]*)"[^>]+(?:property|name)="'+p+'"'));return m?decodeEnt(m[1]):null;};
  const title=og('og:title'),desc=og('og:description')||'',img=og('og:image');
- if(title&&/\(@[\w.]+\)/.test(title)){const m=title.match(/^(.*?)\s*\(@([\w.]+)\)/);const grab=re=>{const x=desc.match(re);return x?toNum(x[1]):null;};
-  return{u:{uniqueId:m[2],nickname:m[1],avatarThumb:img,signature:desc.replace(/^.*?on TikTok\s*\|?\s*/i,'').replace(/[\d.,]+[KMB]?\s*(Likes|Followers|Following)\.?\s*/gi,'').trim()},s:{followerCount:grab(/([\d.,]+\s*[KMB]?)\s*Followers/i),heartCount:grab(/([\d.,]+\s*[KMB]?)\s*Likes/i),followingCount:grab(/([\d.,]+\s*[KMB]?)\s*Following/i)},kind:'gen'};}
+ if(title&&/\(@[\w.]+\)/.test(title)){const m=title.match(/^(.*?)\s*\(@([\w.]+)\)/);const c=grabCounts(desc);return{u:{uniqueId:m[2],nickname:m[1],avatarThumb:img},s:{followerCount:c.followers,heartCount:c.hearts,followingCount:c.following},kind:'gen'};}
  if(/couldn.?t find this account|user_not_found/i.test(html))throw Err('NOTFOUND');
  if(html.length<3000||/secsdk-captcha|captcha-verify|Please wait\.\.\.|Access Denied/i.test(html))throw Err('BLOCKED','صفحة تحقق من تيك توك');
  throw Err('PARSE','لا بيانات مضمّنة');
 }
-async function srcPage(username,proxy){const html=await fetchText('https://www.tiktok.com/@'+username+'?lang=en',proxy);const r=extractPage(html);r.name='صفحة تيك توك عبر '+proxy.name;return r;}
-async function srcCountik(username,proxy){const text=await fetchText('https://countik.com/api/userinfo?uniqueId='+encodeURIComponent(username),proxy);let j;try{j=JSON.parse(text);}catch(_){throw Err('PARSE','ليس JSON');}const u=pickUser(j),s=pickStats(j,u);if(!u)throw Err('PARSE');return{u,s,kind:'gen',name:'Countik عبر '+proxy.name};}
-async function srcUrlebird(username,proxy){
- const html=await fetchText('https://urlebird.com/user/'+encodeURIComponent(username)+'/',proxy);
- const text=html.replace(/<script[\s\S]*?<\/script>/gi,' ').replace(/<style[\s\S]*?<\/style>/gi,' ').replace(/<[^>]+>/g,' ').replace(/&nbsp;/g,' ').replace(/\s+/g,' ');
- const grab=labels=>{for(const l of labels){let m=text.match(new RegExp('([\\d.,]+\\s*[KMB]?)\\s*'+l,'i'));if(!m)m=text.match(new RegExp(l+'\\s*[:·]?\\s*([\\d.,]+\\s*[KMB]?)','i'));if(m)return toNum(m[1]);}return null;};
- const followers=grab(['Followers','Follower']),following=grab(['Following']),hearts=grab(['Likes','Hearts']),videos=grab(['Videos','Uploads']);
- if(followers==null&&hearts==null&&videos==null)throw Err('PARSE','لم تُقرأ الأرقام');
- const h1=html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
- const nickname=h1?decodeEnt(h1[1].replace(/<[^>]+>/g,'')).trim():username;
- return{u:{uniqueId:username,nickname},s:{followerCount:followers,followingCount:following,heartCount:hearts,videoCount:videos},kind:'gen',name:'Urlebird عبر '+proxy.name+' (جزئي)'};
+function parseRendered(text,username){
+ if(/couldn.?t find this account|user not found|page not found/i.test(text))throw Err('NOTFOUND');
+ if(/captcha|are you a robot|access denied|verify you are human|returned error 403/i.test(text))throw Err('BLOCKED','حجب/تحقق');
+ const c=grabCounts(text);
+ let nickname=username,m;
+ if((m=text.match(/Title:\s*([^\n]*?)\s*\(@([\w.]+)\)/)))nickname=m[1].trim();
+ else if((m=text.match(/^#\s+(.+)$/m)))nickname=m[1].trim();
+ if(c.followers==null&&c.hearts==null&&c.videos==null)throw Err('PARSE','لم تُقرأ الأرقام من النص');
+ return{u:{uniqueId:username,nickname},s:{followerCount:c.followers,followingCount:c.following,heartCount:c.hearts,videoCount:c.videos},kind:'gen'};
+}
+async function srcPage(a,username){
+ const target='https://www.tiktok.com/@'+username+'?lang=en';
+ const text=await getBody(target,a);
+ if(a.via==='jina'){const r=parseRendered(text,username);r.name='صفحة تيك توك عبر Jina (جزئي)';return r;}
+ const r=extractPage(text);r.name='صفحة تيك توك عبر '+a.proxy.name;return r;
+}
+async function srcUrlebird(a,username){
+ const target='https://urlebird.com/user/'+encodeURIComponent(username)+'/';
+ const text=await getBody(target,a);
+ let r;
+ if(a.via==='jina')r=parseRendered(text,username);
+ else{
+  const plain=text.replace(/<script[\s\S]*?<\/script>/gi,' ').replace(/<style[\s\S]*?<\/style>/gi,' ').replace(/<[^>]+>/g,' ').replace(/&nbsp;/g,' ').replace(/\s+/g,' ');
+  const c=grabCounts(plain);
+  if(c.followers==null&&c.hearts==null&&c.videos==null)throw Err('PARSE','لم تُقرأ الأرقام');
+  const h1=text.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+  r={u:{uniqueId:username,nickname:h1?decodeEnt(h1[1].replace(/<[^>]+>/g,'')).trim():username},s:{followerCount:c.followers,followingCount:c.following,heartCount:c.hearts,videoCount:c.videos},kind:'gen'};
+ }
+ r.name='Urlebird'+(a.via==='jina?' عبر Jina':' عبر '+a.proxy.name)+' (جزئي)';return r;
+}
+async function srcLivecounts(a,username){
+ const target='https://api.livecounts.io/tiktok-live-follower-counter/stats/'+encodeURIComponent(username);
+ const j=looseJSON(await getBody(target,a));
+ const s=pickStats(j,null);const u=pickUser(j)||{uniqueId:username,nickname:j?.nickname||j?.title||username};
+ if(s.followerCount==null&&s.followers==null&&s.fans==null)throw Err('PARSE','لا أرقام');
+ return{u,s,kind:'gen',name:'LiveCounts (جزئي)'};
 }
 async function resolveVideo(url){
  const sig=makeSignal(prefs.timeout*1000);
- try{const r=await fetch('https://www.tiktok.com/oembed?url='+encodeURIComponent(url),{signal:sig.signal});if(r.ok){const j=await r.json();const m=String(j.author_url||'').match(/@([\w.]+)/);if(m)return m[1];}}catch(_){}finally{sig.cleanup();}
- throw Err('RESOLVE','تعذّر استخراج صاحب المقطع — ألصق معرف الحساب مباشرة');
+ try{const r=await fetch('https://www.tiktok.com/oembed?url='+encodeURIComponent(url),{signal:sig.signal});if(r.ok){const j=await r.json();const m=String(j.author_url||'').match(/@([\w.]+)/);if(m)return m[1];}throw Err('RESOLVE','تعذّر استخراج صاحب المقطع — ألصق معرف الحساب مباشرة');}
+ catch(e){throw classify(e,sig,prefs.timeout);}finally{sig.cleanup();}
 }
 
 function normalize(res,fallback){
@@ -583,7 +611,7 @@ function describe(r){
  add('الهوية','bioLink','رابط البايو','Bio link','link','var(--cyan)',r.bioLink==null?null:(r.bioLink||'لا يوجد رابط'),r.bioLink||'',{mono:true,link:/^https?:\/\//.test(r.bioLink||'')?r.bioLink:null});
  add('الحساب','region','منطقة الحساب','Region','globe','var(--blue)',r.region?`${flag(r.region)} ${r.regionLabel} · ${r.region}`:null);
  add('الحساب','language','لغة المستخدم','Language','lang','var(--violet)',r.language?`${r.languageLabel} · ${r.language}`:null);
- add('الحساب','created','وقت إنشاء الحساب','Created at','cal','var(--amber)',r.createdText,r.createdText,{extra:r.createTime?'Unix: '+r.createTime:'',raw:r.createdText?(r.createdText+(r.createTime?' (Unix: '+r.createTime+')':'')):null});
+ add('الحساب','created','وقت إنشاء الحساب','Created at','cal','var(--amber)',r.createdText,r.createdText,{extra:r.createTime?'Unix: '+r.createTime:''});
  add('الحساب','age','عمر الحساب','Account age','clock','var(--green)',r.ageText,r.ageText,{extra:r.ageDays!=null?fmt(r.ageDays)+' يومًا إجماليًا':''});
  add('الأرقام','followers','المتابعون','Followers','users','var(--cyan)',r.followers==null?null:fmt(r.followers),r.followers==null?null:String(r.followers),{num:r.followers,extra:r.followers!=null?compact(r.followers):''});
  add('الأرقام','following','يتابع','Following','userplus','var(--blue)',r.following==null?null:fmt(r.following),r.following==null?null:String(r.following),{num:r.following,extra:r.following!=null?compact(r.following):''});
@@ -592,12 +620,7 @@ function describe(r){
  add('الأرقام','friends','عدد الأصدقاء','Friends','friend','var(--green)',r.friends==null?null:fmt(r.friends),r.friends==null?null:String(r.friends),{num:r.friends,extra:r.friends!=null?compact(r.friends):''});
  return F;
 }
-function buildTXT(r){
- const F=describe(r);const L=['══ تيك‌سكوب — تقرير حساب تيك توك ══','الرابط: '+r.url,''];
- let g='';for(const f of F){if(f.g!==g){g=f.g;L.push('── '+g+' ──');}L.push(f.label+': '+(f.na?'غير متاح':f.display)+(f.extra?'  ['+f.extra+']':''));}
- L.push('','المصدر: '+r.source,'وقت الجلب: '+new Date(r.fetchedAt).toLocaleString('ar-u-nu-latn'));
- return L.join('\n');
-}
+function buildTXT(r){const F=describe(r);const L=['══ تيك‌سكوب — تقرير حساب تيك توك ══','الرابط: '+r.url,''];let g='';for(const f of F){if(f.g!==g){g=f.g;L.push('── '+g+' ──');}L.push(f.label+': '+(f.na?'غير متاح':f.display)+(f.extra?'  ['+f.extra+']':''));}L.push('','المصدر: '+r.source,'وقت الجلب: '+new Date(r.fetchedAt).toLocaleString('ar-u-nu-latn'));return L.join('\n');}
 
 const stage=$('stage'),userInput=$('userInput'),scanBtn=$('scanBtn'),scanBtnText=$('scanBtnText'),inputMsg=$('inputMsg'),clearBtn=$('clearBtn');
 function setStatus(s){$('statusPill').className='status'+(s==='idle'?'':' '+s);$('statusText').textContent={idle:'جاهز',scan:'يفحص…',ok:'تم',err:'خطأ'}[s];}
@@ -644,13 +667,15 @@ function showScan(username){
 function showError(e,username,reasons){
  cancelRafs();stopTimer();
  const nf=e.code==='NOTFOUND';
- const title=nf?'الحساب غير موجود':e.code==='RESOLVE'?'تعذّر تحديد صاحب الرابط':'تعذّر الجلب من كل المصادر';
- const msg=nf?'تأكد من كتابة المعرف بشكل صحيح — قد يكون الحساب محذوفًا أو غيّر صاحبه اسمه.':e.code==='RESOLVE'?e.message:'قد تكون المصادر محجوبة مؤقتًا أو الشبكة ضعيفة. أعد المحاولة، أو ارفع المهلة، أو بدّل المصدر من الإعدادات.';
+ const title=nf?'الحساب غير موجود':e.code==='RESOLVE'?'تعذّر تحديد صاحب الرابط':'تعذّر الجلب من كل المسارات';
+ const msg=nf?'تأكد من كتابة المعرف بشكل صحيح — قد يكون الحساب محذوفًا أو غيّر اسمه.':e.code==='RESOLVE'?e.message:'كل المصادر والبوابات فشلت أو انتهت مهلتها. هذا غالبًا حجب من الشبكة أو من تيك توك نفسه.';
  stage.innerHTML=`<div class="card error-card reveal">
   <div class="error-ic">${ic(nf?'user':'alert')}</div><h3>${title}</h3><p>${esc(msg)}</p>
-  ${reasons&&reasons.length?`<div class="err-list">${reasons.slice(-5).map(r=>esc(r)).join('<br>')}</div>`:''}
+  <div class="err-tip">جرّب: زر «اختبار الاتصال» لمعرفة المسار السالك · ارفع المهلة إلى 25ث · بدّل الشبكة أو فعّل VPN · أو أضف بوابتك الخاصة في الإعدادات.</div>
+  ${reasons&&reasons.length?`<div class="err-list">${reasons.slice(-6).map(r=>esc(r)).join('<br>')}</div>`:''}
   <div class="err-actions">
    ${username?`<button class="btn primary" data-action="retry">${ic('refresh')} إعادة المحاولة</button>`:''}
+   ${username?`<button class="btn ghost" data-action="retry-long">${ic('clock')} إعادة بمهلة 25ث</button>`:''}
    ${prefs.source!=='auto'?`<button class="btn ghost" data-action="auto">${ic('bolt')} الوضع التلقائي</button>`:''}
    ${username?`<a class="btn ghost" href="https://www.tiktok.com/@${esc(username)}" target="_blank" rel="noopener noreferrer">${ic('ext')} فتح في تيك توك</a>`:''}
   </div></div>`;
@@ -709,28 +734,40 @@ function animateCounts(root){
 }
 
 function buildAttempts(){
- const off=state.scanCount%PROXIES.length;const P=i=>PROXIES[(off+i)%PROXIES.length];
+ const P=proxyList();const off=state.scanCount%P.length;const px=i=>P[(off+i)%P.length];
+ const T=prefs.timeout*1000,fast=Math.min(prefs.timeout,6)*1000;
  const s=prefs.source;
- if(s==='tikwm')return[{src:'tikwm',host:'www.tikwm.com',proxy:null},{src:'tikwm',host:'tikwm.com',proxy:null},{src:'tikwm',host:'www.tikwm.com',proxy:P(0)},{src:'tikwm',host:'www.tikwm.com',proxy:P(1)}];
- if(s==='ttapi')return[0,1,2,3].map(i=>({src:'ttapi',proxy:P(i)}));
- if(s==='page')return[0,1,2,3,4,5].map(i=>({src:'page',proxy:P(i)}));
- if(s==='urlebird')return[0,1,2,3].map(i=>({src:'urlebird',proxy:P(i)}));
+ const tk=(host,via,proxy,ms)=>({src:'tikwm',host,via,proxy,ms});
+ if(s==='tikwm')return[tk('www.tikwm.com',null,null,fast),tk('tikwm.com',null,null,fast),tk('www.tikwm.com','jina',null,T),tk('www.tikwm.com',null,px(0),T),tk('www.tikwm.com',null,px(1),T)];
+ if(s==='jina')return[tk('www.tikwm.com','jina',null,T),{src:'ttapi',via:'jina',ms:T},{src:'page',via:'jina',ms:T},{src:'urlebird',via:'jina',ms:T}];
+ if(s==='ttapi')return[{src:'ttapi',via:'jina',ms:T},...[0,1,2,3].map(i=>({src:'ttapi',proxy:px(i),ms:T}))];
+ if(s==='page')return[{src:'page',via:'jina',ms:T},...[0,1,2,3,4,5].map(i=>({src:'page',proxy:px(i%P.length),ms:T}))];
+ if(s==='urlebird')return[{src:'urlebird',via:'jina',ms:T},...[0,1,2].map(i=>({src:'urlebird',proxy:px(i),ms:T}))];
  return[
-  {src:'tikwm',host:'www.tikwm.com',proxy:null},{src:'tikwm',host:'tikwm.com',proxy:null},{src:'tikwm',host:'www.tikwm.com',proxy:P(0)},
-  {src:'ttapi',proxy:P(0)},{src:'ttapi',proxy:P(1)},
-  {src:'page',proxy:P(0)},{src:'page',proxy:P(1)},{src:'page',proxy:P(2)},
-  {src:'countik',proxy:P(0)},{src:'urlebird',proxy:P(1)},{src:'urlebird',proxy:P(2)}
+  tk('www.tikwm.com',null,null,fast),
+  tk('tikwm.com',null,null,fast),
+  tk('www.tikwm.com','jina',null,T),
+  tk('www.tikwm.com',null,px(0),T),
+  tk('www.tikwm.com',null,px(1),T),
+  {src:'ttapi',via:'jina',ms:T},
+  {src:'ttapi',proxy:px(0),ms:T},
+  {src:'page',via:'jina',ms:T},
+  {src:'page',proxy:px(0),ms:T},
+  {src:'page',proxy:px(1),ms:T},
+  {src:'page',proxy:px(2),ms:T},
+  {src:'livecounts',ms:fast},
+  {src:'urlebird',proxy:px(0),ms:T},
+  {src:'urlebird',via:'jina',ms:T}
  ];
 }
-function attemptName(a){const n={tikwm:'TikWM',ttapi:'TikTok API',page:'صفحة تيك توك',countik:'Countik',urlebird:'Urlebird'}[a.src];return n+(a.proxy?' + '+a.proxy.name:' مباشر');}
-async function runAttempt(a,username){
- if(a.src==='tikwm')return srcTikwm(a.host,username,a.proxy);
- if(a.src==='ttapi')return srcTtapi(username,a.proxy);
- if(a.src==='page')return srcPage(username,a.proxy);
- if(a.src==='countik')return srcCountik(username,a.proxy);
- return srcUrlebird(username,a.proxy);
+function attemptName(a){const n={tikwm:'TikWM',ttapi:'TikTok API',page:'صفحة تيك توك',urlebird:'Urlebird',livecounts:'LiveCounts'}[a.src];return n+(a.via==='jina?' + Jina':a.proxy?' + '+a.proxy.name:' مباشر');}
+async function runAttempt(a,u){
+ if(a.src==='tikwm')return srcTikwm(a,u);
+ if(a.src==='ttapi')return srcTtapi(a,u);
+ if(a.src==='page')return srcPage(a,u);
+ if(a.src==='urlebird')return srcUrlebird(a,u);
+ return srcLivecounts(a,u);
 }
-const FAIL={TIMEOUT:'انتهت المهلة',NETWORK:'فشل الاتصال',HTTP:'رفض الطلب',EMPTY:'رد فارغ',BLOCKED:'صفحة تحقق',PARSE:'تعذّر القراءة',API:'خطأ من المصدر',RATE:'تجاوز الحد',RESOLVE:'فشل تحديد الحساب'};
 async function startScan(raw){
  const parsed=parseInput(raw);
  if(parsed.err){inputMsg.textContent=parsed.err;userInput.classList.remove('invalid');void userInput.offsetWidth;userInput.classList.add('invalid');sfx.err();userInput.focus();return;}
@@ -740,7 +777,7 @@ async function startScan(raw){
  setScanning(true);setStatus('scan');sfx.scan();
  let username=parsed.username||'';const reasons=[];
  const ui=showScan(username||'رابط مقطع');
- ui.log('بدء الفحص…');
+ ui.log('بدء الفحص — المسار السريع أولًا (TikWM/Jina)…');
  if(!navigator.onLine){setScanning(false);showError(Err('NETWORK','لا يوجد اتصال بالإنترنت'),'',[]);sfx.err();return;}
  try{
   if(parsed.video){ui.log('رابط مقطع — استخراج صاحب الحساب عبر oEmbed…');username=await resolveVideo(parsed.video);ui.log('صاحب الحساب: @'+username,'ok');const h=stage.querySelector('.target');if(h)h.textContent='@'+username;}
@@ -761,11 +798,11 @@ async function startScan(raw){
    }catch(e){
     if(e.code==='CANCELED'||token!==state.token||state.cancelled)throw Err('CANCELED');
     if(e.code==='NOTFOUND')throw e;
-    const line=`${attemptName(a)}: ${FAIL[e.code]||e.code}${e.message?' — '+e.message:''}`;
+    const line=`${attemptName(a)}: ${e.message||e.code}`;
     reasons.push(line);ui.log(line,'warn');
    }
   }
-  throw Err('ALLFAIL','استُنفدت كل المصادر');
+  throw Err('ALLFAIL','استُنفدت كل المسارات');
  }catch(e){
   if(token!==state.token)return;
   stopTimer();setScanning(false);
@@ -822,6 +859,7 @@ stage.addEventListener('click',async e=>{
  if(a==='cancel'){state.cancelled=true;if(state.abort)state.abort.abort();return;}
  if(a==='refresh'&&r){userInput.value='@'+r.username;clearBtn.classList.add('show');startScan('@'+r.username);}
  else if(a==='retry'&&state.lastUser)startScan('@'+state.lastUser);
+ else if(a==='retry-long'&&state.lastUser){prefs.timeout=25;savePrefs();$('timeoutRange').value=25;$('timeoutVal').textContent='25 ث';startScan('@'+state.lastUser);}
  else if(a==='auto'){prefs.source='auto';savePrefs();$('srcSel').value='auto';if(state.lastUser)startScan('@'+state.lastUser);}
  else if(a==='copy-all'&&r){const ok=await copyText(buildTXT(r));toast(ok?'نُسخ التقرير كاملًا ✓':'تعذّر النسخ',ok?'ok':'err');}
  else if(a==='json'&&r){download(`tikscope_${r.username}.json`,JSON.stringify(r,null,2),'application/json');toast('نُزّل JSON ✓','ok');}
@@ -835,12 +873,23 @@ clearBtn.addEventListener('click',()=>{userInput.value='';clearBtn.classList.rem
 $('pasteBtn').addEventListener('click',async()=>{sfx.click();try{const t=await navigator.clipboard.readText();if(t){userInput.value=t.trim();clearBtn.classList.add('show');userInput.focus();toast('لُصق ✓','ok');}else toast('الحافظة فارغة','info');}catch(_){userInput.focus();toast('الصق يدويًا — مطوّلًا ثم لصق','info');}});
 function syncSound(){$('soundUse').setAttribute('href',prefs.sound?'#i-sound':'#i-mute');$('soundLabel').textContent=prefs.sound?'مفعّل':'مكتوم';$('soundBtn').classList.toggle('off',!prefs.sound);$('soundBtn').setAttribute('aria-pressed',String(prefs.sound));}
 $('soundBtn').addEventListener('click',()=>{prefs.sound=!prefs.sound;savePrefs();syncSound();if(prefs.sound){ensureAudio();if(actx&&actx.state==='suspended')actx.resume();sfx.click();}toast(prefs.sound?'الصوت مفعّل':'تم الكتم','info');});
-function applyPrefs(){$('srcSel').value=prefs.source;$('timeoutRange').value=prefs.timeout;$('timeoutVal').textContent=prefs.timeout+' ث';$('saveSw').checked=prefs.save;$('reduceSw').checked=prefs.reduce;document.documentElement.dataset.reduce=prefs.reduce?'1':'';syncSound();}
+function applyPrefs(){$('srcSel').value=prefs.source;$('timeoutRange').value=prefs.timeout;$('timeoutVal').textContent=prefs.timeout+' ث';$('saveSw').checked=prefs.save;$('reduceSw').checked=prefs.reduce;$('customProxy').value=prefs.customProxy||'';document.documentElement.dataset.reduce=prefs.reduce?'1':'';syncSound();}
 $('srcSel').addEventListener('change',e=>{prefs.source=e.target.value;savePrefs();sfx.click();});
 $('timeoutRange').addEventListener('input',e=>{prefs.timeout=+e.target.value;$('timeoutVal').textContent=prefs.timeout+' ث';savePrefs();});
 $('saveSw').addEventListener('change',e=>{prefs.save=e.target.checked;savePrefs();sfx.click();});
 $('reduceSw').addEventListener('change',e=>{prefs.reduce=e.target.checked;savePrefs();document.documentElement.dataset.reduce=prefs.reduce?'1':'';sfx.click();});
+$('customProxy').addEventListener('change',e=>{prefs.customProxy=e.target.value.trim();savePrefs();sfx.click();toast(prefs.customProxy?'حُفظت البوابة المخصصة — ستُجرَّب أولًا':'أُزيلت البوابة المخصصة','info');});
 $('resetPrefs').addEventListener('click',()=>{prefs={...DEFAULTS};savePrefs();applyPrefs();sfx.undo();toast('أُعيدت الإعدادات ✓','ok');});
+async function probe(url,ms=6000){const c=new AbortController();const t=setTimeout(()=>c.abort('probe'),ms);try{const r=await fetch(url,{signal:c.signal});return r.ok;}catch(_){return false;}finally{clearTimeout(t);}}
+$('connTest').addEventListener('click',async()=>{
+ sfx.click();toast('جارٍ اختبار المسارات… (6 ث لكل مسار)','info');
+ const tests=[['TikWM مباشر','https://www.tikwm.com/api/user/info?unique_id=@tiktok'],['Jina Reader','https://r.jina.ai/https://example.com'],['CorsProxy','https://corsproxy.io/?url='+encodeURIComponent('https://example.com')],['AllOrigins','https://api.allorigins.win/raw?url='+encodeURIComponent('https://example.com')]];
+ const out=[];
+ for(const[name,url]of tests){const ok=await probe(url);out.push((ok?'✓ ':'✗ ')+name);}
+ const anyOk=out.some(x=>x.startsWith('✓'));
+ toast(out.join('\n'),anyOk?'ok':'err');
+ if(!anyOk)toast('كل المسارات محجوبة — جرّب شبكة أخرى أو VPN أو أضف بوابة مخصصة.','warn');
+});
 document.addEventListener('keydown',e=>{
  if(e.key==='Escape'){if(state.modalRes){state.modalRes(false);return;}if(state.scanning){state.cancelled=true;if(state.abort)state.abort.abort();}}
  if(e.key==='/'&&!/(INPUT|TEXTAREA|SELECT)/.test(document.activeElement.tagName)){e.preventDefault();userInput.focus();}
